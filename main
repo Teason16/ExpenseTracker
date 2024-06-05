@@ -1,17 +1,23 @@
+# Expense tracking program created to practice lambda functions
+
+# Create function to append new expense to list of expenses
 def add_expense(expenses, amount, category):
     expenses.append({'amount': amount, 'category': category})
-    
+
+# Create a function to print the list of expenses
 def print_expenses(expenses):
     for expense in expenses:
         print(f'Amount: {expense["amount"]}, Category: {expense["category"]}')
     
+# Create a function to sum the total amount of all expenses
 def total_expenses(expenses):
     return sum(map(lambda expense: expense['amount'], expenses))
-    
+
+# Create a function to filter the expenses by category
 def filter_expenses_by_category(expenses, category):
     return filter(lambda expense: expense['category'] == category, expenses)
     
-
+# Main function to display user interface
 def main():
     expenses = []
     while True:
